@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
 import 'widgets/questionnaire1_item_widget.dart';
+import '../forms_fifth_screen/forms_fifth_screen.dart'; // forms_fifth_screen을 import 합니다.
 
 class FormsFourthScreen extends StatelessWidget {
   const FormsFourthScreen({Key? key})
@@ -135,7 +136,10 @@ class FormsFourthScreen extends StatelessWidget {
   }
 
   /// Navigates to the formsFifthScreen when the action is triggered.
-  onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.formsFifthScreen);
+  void onTaptf(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FormsFifthScreen()),
+    );
   }
 }

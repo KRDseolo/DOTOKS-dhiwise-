@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
 import 'widgets/questionnaire_item_widget.dart';
+import '../forms_third_screen/forms_third_screen.dart'; // forms_third_screen을 import 합니다.
 
 class FormsSecondScreen extends StatelessWidget {
   const FormsSecondScreen({Key? key})
@@ -135,7 +136,10 @@ class FormsSecondScreen extends StatelessWidget {
   }
 
   /// Navigates to the formsThirdScreen when the action is triggered.
-  onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.formsThirdScreen);
+  void onTaptf(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FormsThirdScreen()),
+    );
   }
 }

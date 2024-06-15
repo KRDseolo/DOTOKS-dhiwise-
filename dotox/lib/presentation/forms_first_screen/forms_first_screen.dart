@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
 import 'widgets/userprofile_item_widget.dart';
+import '../forms_second_screen/forms_second_screen.dart'; // forms_second_screen을 import 합니다.
 
 class FormsFirstScreen extends StatelessWidget {
   const FormsFirstScreen({Key? key})
@@ -134,6 +135,12 @@ class FormsFirstScreen extends StatelessWidget {
         bottom: 17.v,
       ),
       buttonTextStyle: CustomTextStyles.headlineSmallWhiteA70001,
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FormsSecondScreen()),
+        );
+      },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
 import 'widgets/usermanagement_item_widget.dart';
+import '../wait_one_screen/wait_one_screen.dart'; // wait_one_screen을 import 합니다.
 
 class FormsFifthScreen extends StatelessWidget {
   const FormsFifthScreen({Key? key})
@@ -111,8 +112,11 @@ class FormsFifthScreen extends StatelessWidget {
     );
   }
 
-  /// Navigates to the waitScreen when the action is triggered.
-  onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.waitScreen);
+  /// Navigates to the waitOneScreen when the action is triggered.
+  void onTaptf(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WaitOneScreen()),
+    );
   }
 }

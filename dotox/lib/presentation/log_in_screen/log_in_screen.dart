@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
 import '../../widgets/custom_icon_button.dart';
-import '../../widgets/custom_text_form_field.dart'; // ignore_for_file: must_be_immutable
+import '../../widgets/custom_text_form_field.dart';
+import '../forms_screen/forms_screen.dart'; // forms_screen을 import 합니다.
 
-// ignore_for_file: must_be_immutable
 class LogInScreen extends StatelessWidget {
   LogInScreen({Key? key})
       : super(
@@ -168,6 +168,9 @@ class LogInScreen extends StatelessWidget {
 
   /// Navigates to the formsScreen when the action is triggered.
   onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.formsScreen);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FormsScreen()),
+    );
   }
 }

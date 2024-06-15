@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../theme/custom_button_style.dart';
 import '../../widgets/custom_elevated_button.dart';
+import '../result_screen/result_screen.dart'; // result_screen을 import 합니다.
 
 class InformationScreen extends StatelessWidget {
   const InformationScreen({Key? key})
@@ -131,7 +132,10 @@ class InformationScreen extends StatelessWidget {
   }
 
   /// Navigates to the resultScreen when the action is triggered.
-  onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.resultScreen);
+  void onTaptf(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ResultScreen()),
+    );
   }
 }

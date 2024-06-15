@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../widgets/custom_elevated_button.dart';
+import '../forms_first_screen/forms_first_screen.dart'; // forms_first_screen을 import 합니다.
 
 class FormsScreen extends StatelessWidget {
   const FormsScreen({Key? key})
@@ -61,6 +62,9 @@ class FormsScreen extends StatelessWidget {
               ),
               CustomElevatedButton(
                 text: "시작하기",
+                onPressed: () {
+                  onStartButtonPressed(context);
+                },
               ),
               SizedBox(height: 38.v),
               Text(
@@ -74,6 +78,14 @@ class FormsScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  /// Navigates to the formsFirstScreen when the action is triggered.
+  void onStartButtonPressed(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FormsFirstScreen()),
     );
   }
 }

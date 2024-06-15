@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../core/app_export.dart';
 import '../../theme/custom_button_style.dart';
 import '../../widgets/custom_elevated_button.dart';
+import '../main_page/main_page.dart'; // main_page를 import 합니다.
+import '../information_screen/information_screen.dart'; // information_screen을 import 합니다.
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({Key? key})
@@ -28,7 +30,6 @@ class ResultScreen extends StatelessWidget {
               SizedBox(height: 53.v),
               GestureDetector(
                 onTap: () {
-                  onTapTxttf(context);
                 },
                 child: Container(
                   width: 333.h,
@@ -64,7 +65,7 @@ class ResultScreen extends StatelessWidget {
                           style: theme.textTheme.headlineMedium,
                         ),
                         TextSpan(
-                          text: "\nuser506 님을 위한  특별한 코스를 준비했어요",
+                          text: "\nuser506 님을 위한 특별한 코스를 준비했어요",
                           style: theme.textTheme.headlineMedium,
                         )
                       ],
@@ -100,18 +101,19 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  /// Navigates to the containerScreen when the action is triggered.
-  onTapTxttf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.containerScreen);
-  }
-
-  /// Navigates to the containerScreen when the action is triggered.
+  /// Navigates to the mainPage when the action is triggered.
   onTaptf(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.containerScreen);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MainPage()),
+    );
   }
 
   /// Navigates to the informationScreen when the action is triggered.
   onTaptf1(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.informationScreen);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => InformationScreen()),
+    );
   }
 }

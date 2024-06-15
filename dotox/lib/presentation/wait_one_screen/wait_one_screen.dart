@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import '../../core/app_export.dart';
+import '../wait_screen/wait_screen.dart'; // wait_screen을 import 합니다.
 
 class WaitOneScreen extends StatelessWidget {
   const WaitOneScreen({Key? key})
@@ -9,6 +11,14 @@ class WaitOneScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Timer를 사용하여 1.5초 후에 WaitScreen으로 이동
+    Timer(Duration(seconds: 1, milliseconds: 500), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => WaitScreen()),
+      );
+    });
+
     return SafeArea(
       child: Scaffold(
         body: Container(

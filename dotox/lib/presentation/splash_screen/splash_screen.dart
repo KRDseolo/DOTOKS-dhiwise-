@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/app_export.dart';
+import 'dart:async';
+import '../../core/app_export.dart'; // 필요에 따라 app_export 파일을 import 합니다.
+import '../log_in_screen/log_in_screen.dart'; // log_in_screen.dart 파일을 import 합니다.
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key})
@@ -9,6 +11,14 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Timer를 사용하여 2.25초 후에 log_in_screen으로 이동
+    Timer(Duration(seconds: 2, milliseconds: 250), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LogInScreen()),
+      );
+    });
+
     return SafeArea(
       child: Scaffold(
         body: Container(
